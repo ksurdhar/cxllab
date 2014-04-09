@@ -1,0 +1,39 @@
+set up devise
+set up figaro
+
+create user model with access_token, about, and genre
+
+
+
+
+1. click signup => user controller uses "link or connect" action which uses the following
+
+require 'soundcloud'
+
+# create client object with app credentials
+client = Soundcloud.new(:client_id => 'YOUR_CLIENT_ID',
+                        :client_secret => 'YOUR_CLIENT_SECRET',
+                        :redirect_uri => 'REDIRECT_URL')
+
+# redirect user to authorize URL
+redirect_to client.authorize_url()
+
+
+2. redirect url matches the actual "create new user" action in the user controller
+
+require 'soundcloud'
+
+# create client object with app credentials
+client = Soundcloud.new(:client_id => 'YOUR_CLIENT_ID',
+                        :client_secret => 'YOUR_CLIENT_SECRET',
+                        :redirect_uri => 'REDIRECT_URL')
+
+# exchange authorization code for access token
+code = params[:code]
+access_token = client.exchange_token(:code => code)
+
+
+3. save the access token along with the new user
+
+
+

@@ -2,9 +2,23 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+ruby "1.9.3"
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'backbone-on-rails'
+gem 'debugger'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'pg'
+gem 'bulk_data_methods'
+gem 'pace-rails'
+gem 'rails_12factor'
+gem 'thin'
+gem 'json'
+gem 'newrelic_rpm'
+
+gem 'figaro'
+gem 'devise'
+gem 'oauth'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
