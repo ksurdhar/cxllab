@@ -1,4 +1,4 @@
-set up devise
+set up devise home route like root :to => "home#index"
 set up figaro
 
 create user model with access_token, about, and genre
