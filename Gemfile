@@ -15,6 +15,7 @@ gem 'rails_12factor'
 gem 'thin'
 gem 'json'
 gem 'newrelic_rpm'
+gem 'soundcloud'
 
 gem 'figaro'
 gem 'devise'
