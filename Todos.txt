@@ -1,10 +1,35 @@
-set up devise home route like root :to => "home#index"
-edit devise user controller create action
+Algorithm for feed discovery, random, but adding a tally to # of views a profile has
+Create several soundcloud accounts - say 4 per genre. 
+As a person who is signed in, how do I show a track of another user?
+On the feed/ discovery page, have three(or one, tinder style) javascript widgets
+
+GOAL FOR TONIGHT: SAVE A USER WITH A SOUNDCLOUD ID
+
+seems like we need to save the soundcloud user_id as part of the user model
+look at below for how to do that. 
+before save, user.sc_id = client.id
+
+
+# initializing a client with an access token
+client = SoundCloud.new(:access_token => SOME_ACCESS_TOKEN)
+
+# updating the users profile description
+client.put("/me", :user => {:description => "a new description"})
+
+
+
+
+
+
+
+
+
 set up figaro
-
-
-
 create user model with access_token, about, and genre
+
+
+
+
 
 
 

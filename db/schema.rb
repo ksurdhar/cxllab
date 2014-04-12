@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140409212628) do
     t.string   "about"
     t.string   "genre"
     t.boolean  "producer"
+    t.string   "sc_access_token"
+    t.integer  "sc_id"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
