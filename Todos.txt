@@ -14,21 +14,11 @@ before save, user.sc_id = client.id
 client = SoundCloud.new(:access_token => SOME_ACCESS_TOKEN)
 
 # updating the users profile description
-client.put("/me", :user => {:description => "a new description"})
+client.put("/me", :user => {:description => "a new description"}
 
 
 
-
-
-
-
-
-
-set up figaro
-create user model with access_token, about, and genre
-
-
-
+SET UP FIGARO
 
 
 
