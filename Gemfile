@@ -16,6 +16,7 @@ gem 'thin'
 gem 'json'
 gem 'newrelic_rpm'
 gem 'soundcloud'
+gem 'bootstrap-sass'
 
 gem 'figaro'
 gem 'devise'

@@ -1,5 +1,24 @@
 Cxllab.Collections.Users = Backbone.Collection.extend({
+  url: "api/textblocks",
+  model: Cxllab.Models.User,
+  
+  getOrFetch: function (id){
+    var model;
+    var users = this;
 
-  model: Cxllab.Models.User
+    if(model = this.get(id)){
+      model.fetch();
+      return model;
+    } else {
+      model = new Cxllab.Models.User({ id: id });
+      model.fetch({
+        success: function(){ users.add(model) }
+      });
+      return model
+    }
+  }
+
 
 });
+
+window.Cxllab.Collections.users = new Cxllab.Collections.Users();

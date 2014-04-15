@@ -5,6 +5,10 @@ one way follow relationship when created, check for other "likes" which match.
 be able to embed a widget using javascript
 add sc_username to the user model
 
+
+ADD #content hashtag somewhere
+
+
 User index can be the feed/discovery
 create a new model: relationships // likes
 notifications can appear when a user swipes - listening for changes

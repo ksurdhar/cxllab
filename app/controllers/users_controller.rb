@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     @player = embed_info['html']
   end
 
+  def index
+    @users = User.all
+    render "users/index"
+  end
+
   private
 
   def user_params

@@ -4,7 +4,10 @@ window.Cxllab = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    new Cxllab.Routers.AppRouter({
+      $rootEl: $("#content")
+    });
+    Backbone.history.start();
   }
 };
 
