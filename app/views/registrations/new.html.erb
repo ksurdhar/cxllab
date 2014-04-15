@@ -1,7 +1,10 @@
-<h2>Sign up</h2>
+<h2>Sign ahp</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
+
+  <%= f.hidden_field :sc_access_token, value: @new_sc_token %>
+  <%= f.hidden_field :sc_id, value: @new_sc_id %>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>

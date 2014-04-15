@@ -7,8 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :about
       t.string :genre
       t.boolean :producer
-      t.string :sc_access_token
       t.integer :sc_id
+      t.string :sc_access_token
 
       ## Recoverable
       t.string   :reset_password_token
