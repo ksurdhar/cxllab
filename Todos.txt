@@ -2,11 +2,24 @@ Algorithm for feed discovery, random, but adding a tally to # of views a profile
 Create several soundcloud accounts - say 4 per genre. 
 one way follow relationship when created, check for other "likes" which match.
 
-be able to embed a widget using javascript
-add sc_username to the user model
 
 
-ADD #content hashtag somewhere
+
+
+modeling likes
+creating a custom scope (User.all <= all is a scope)
+
+current_user.potential_matches
+
+potential_matches = users with ids that are not included in my liked users
+
+a user has many liked_users
+a user has many likes
+
+
+
+
+
 
 
 User index can be the feed/discovery
@@ -17,13 +30,6 @@ notifications can appear when a user swipes - listening for changes
 phone dev sdk - ask CJ about it
 INSIGHT: 
 
-soundcloud access token is only important the first time to get the soundcloud username / other information.
-This stuff is internal to the app!! This is super exciting!!
-We should absolutely have a validation to ensure that they have a 
-The app should cycle through widgets without any need of the user. 
-
-
-GAH I PROBABLY CAN DO THIS ALL IN BACKBONE
 SET UP FIGARO
 
 
