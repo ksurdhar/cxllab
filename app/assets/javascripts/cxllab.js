@@ -4,7 +4,7 @@ window.Cxllab = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new Cxllab.Routers.AppRouter({
+    new Cxllab.Routers.Users({
       $rootEl: $("#content")
     });
     Backbone.history.start();

@@ -3,9 +3,11 @@ Cxllab::Application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
 
 
-  resources :users, only: [:show] do
-    collection do
-      get 'sc_connect'
+  namespace :api do
+    resources :users, only: [:show] do
+      collection do
+        get 'sc_connect'
+      end
     end
   end
 

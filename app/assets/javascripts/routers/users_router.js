@@ -5,7 +5,13 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   routes: {
+    "":"greetView",
     "users":"userIndex"
+  },
+
+  greetView: function(){
+    var view = new Cxllab.Views.greetView();
+    this._swapView(view);
   },
 
   userIndex: function(){

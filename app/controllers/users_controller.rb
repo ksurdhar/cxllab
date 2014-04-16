@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Api::UsersController < ApplicationController
 
   def sc_connect
     client = Soundcloud.new(:client_id => '5a1ab580242d18027f496e01bfc31064',

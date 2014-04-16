@@ -1,5 +1,5 @@
 Cxllab.Collections.Users = Backbone.Collection.extend({
-  url: "api/textblocks",
+  url: "api/users",
   model: Cxllab.Models.User,
   
   getOrFetch: function (id){
