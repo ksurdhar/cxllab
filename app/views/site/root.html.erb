@@ -1,5 +1,8 @@
-Welcome to mah home!
 
-<%= link_to "Sign Up", sc_connect_api_users_url %>
+<% if current_user.nil? %> 
+  <%= link_to "Sign Up", sc_connect_api_users_url %>
+<% else %>
+  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+<% end %>
 
 <div id="content"></div>
