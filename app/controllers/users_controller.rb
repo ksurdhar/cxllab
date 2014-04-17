@@ -16,10 +16,14 @@ class Api::UsersController < ApplicationController
 
     embed_info = client.get('/oembed', :url => track_url)
     @player = embed_info['html']
+
+    respond_to do |format|
+      format.json { render json: @user }
+    end
   end
 
   def index
-    @users = User.all - current_user.liked_users - current_user
+    @users = User.all - current_user.liked_users - [current_user]
     render "users/index"
   end
 

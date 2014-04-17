@@ -1,8 +1,11 @@
 
 <% if current_user.nil? %> 
   <%= link_to "Sign Up", sc_connect_api_users_url %>
+  <%= link_to "Sign In", new_user_session_url %>
 <% else %>
   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+  <%= link_to "Index", "#/users"  %>
+  <%= link_to "Account", "#/users/#{current_user.id}"  %>
 <% end %>
 
 <div id="content"></div>

@@ -8,9 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     access_token = client.exchange_token(:code => code)
     @new_sc_token = access_token.access_token
 
-
     new_client = Soundcloud.new(:access_token => @new_sc_token)
-
     current_user = new_client.get('/me')
     @new_sc_id = current_user.id
 

@@ -21,5 +21,6 @@ module Cxllab
     # config.i18n.default_locale = :de
 
     config.assets.initialize_on_precompile = false
+    config.autoload_paths += Dir["#{Rails.root}/app/models/[a-z]*"]
   end
 end
