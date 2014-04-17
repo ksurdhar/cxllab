@@ -6,8 +6,8 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   routes: {
     "":"greetView",
-    "users":"userIndex",
-    "users/:id":"userShow"
+    "users/:id":"userShow",
+    "users":"userIndex"
   },
 
   greetView: function(){
@@ -23,9 +23,15 @@ Cxllab.Routers.Users = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  userShow: function(){
-    var view = new Cxllab.Views.userView();
+  userShow: function(id){
+    var user = Cxllab.Collections.users.getOrFetch(id);
+
+    var view = new Cxllab.Views.userView({
+      model: user
+    });
     this._swapView(view);
+
+
   },
 
   _swapView: function (view) {

@@ -3,7 +3,8 @@ Create several soundcloud accounts - say 4 per genre.
 
 
 
-create a backbone user show view
+change the route where user registration takes you
+
 
 add an attribute to relationships: t.boolean :liked
 two forms w/ hidden fields for buttons
@@ -20,8 +21,6 @@ create a new model: relationships // likes
 notifications can appear when a user swipes - listening for changes
 
 
-phone dev sdk - ask CJ about it
-INSIGHT: 
 
 SET UP FIGARO
 
