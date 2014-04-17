@@ -4,7 +4,7 @@ Cxllab::Application.routes.draw do
 
 
   namespace :api do
-    resources :users, only: [:show] do
+    resources :users, only: [] do
       collection do
         get 'sc_connect'
       end
@@ -12,7 +12,7 @@ Cxllab::Application.routes.draw do
   end
 
   namespace :api, :defaults => { :format => :json } do
-    resources :users, only: [:index]
+    resources :users, only: [:index, :show]
     resources :relationships, only: [:create]
   end
 

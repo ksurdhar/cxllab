@@ -3,12 +3,10 @@ Create several soundcloud accounts - say 4 per genre.
 
 
 
-backbone collections for relationships probably need two different kinds // liked_relationships and liker_relationships
+create a backbone user show view
 
-NO! There are only relationships. of one kind.
-
-
-create a backbone show view 
+add an attribute to relationships: t.boolean :liked
+two forms w/ hidden fields for buttons
 
 
 
