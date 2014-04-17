@@ -19,7 +19,8 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all #instead use current_user.potential_matches
+    #or, alternatively: User.all - current_user.liked_users
     render "users/index"
   end
 

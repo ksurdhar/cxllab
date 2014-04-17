@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   has_one :sc_token
 
 
-  has_many :liker_relationships, :foreign_key => :liker_id, :class_name => 'Relationship'
-  has_many :liked_relationships, :foreign_key => :liked_user_id, :class_name => 'Relationship'
+  has_many :liker_relationships, :foreign_key => :liked_user_id, :class_name => 'Relationship'
+  has_many :liked_relationships, :foreign_key => :liker_id, :class_name => 'Relationship'
 
   has_many :liked_users, 
   through: :liked_relationships, 
