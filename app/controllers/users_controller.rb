@@ -19,13 +19,11 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all #instead use current_user.potential_matches
-    #or, alternatively: User.all - current_user.liked_users
+    @users = User.all - current_user.liked_users
     render "users/index"
   end
 
   private
-
   def user_params
     params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, :sc_id)
   end

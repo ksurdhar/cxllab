@@ -1,25 +1,20 @@
 Algorithm for feed discovery, random, but adding a tally to # of views a profile has
 Create several soundcloud accounts - say 4 per genre. 
-one way follow relationship when created, check for other "likes" which match.
 
 
 
+backbone collections for relationships probably need two different kinds // liked_relationships and liker_relationships
+
+NO! There are only relationships. of one kind.
 
 
-modeling likes
+create a backbone show view 
+
+
+
 creating a custom scope (User.all <= all is a scope)
-
 current_user.potential_matches
-
 potential_matches = users with ids that are not included in my liked users
-
-a user has many liked_users
-a user has many likes
-
-
-
-
-
 
 
 User index can be the feed/discovery
