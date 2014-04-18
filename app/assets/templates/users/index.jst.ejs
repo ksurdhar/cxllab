@@ -4,7 +4,9 @@
        <h1 class="text-center">User Index</h1><br>
         <ul>
         <% users.each(function(user) { %>
-          <li><%= user.get('email') %></li>
+          <li><%= user.get('email') %>
+          <button class="btn btn-sm btn-success" type="button" id="newRelationBtn">Like</button>
+          </li>
         <% }); %>
         </ul>
     </div>

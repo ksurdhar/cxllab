@@ -2,12 +2,20 @@ Algorithm for feed discovery, random, but adding a tally to # of views a profile
 Create several soundcloud accounts - say 4 per genre. 
 
 
+grab id by data.like.id
+add dislike button, accompanying method
 
-change the route where user registration takes you
+add username to soundcloud model
+add t.boolean :liked to relationship model
+update jbuilder + controllers
+
+Show only one view at a time
+get soundcloud player
 
 
-add an attribute to relationships: t.boolean :liked
-two forms w/ hidden fields for buttons
+
+
+
 
 
 
@@ -16,8 +24,6 @@ current_user.potential_matches
 potential_matches = users with ids that are not included in my liked users
 
 
-User index can be the feed/discovery
-create a new model: relationships // likes
 notifications can appear when a user swipes - listening for changes
 
 

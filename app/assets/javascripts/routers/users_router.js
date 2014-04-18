@@ -24,19 +24,12 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userShow: function(id){
-    // debugger
-    var user = new Cxllab.Models.User({id: id});
-    user.fetch({
-      success:function(e) {
-        debugger
-      },
-      error: function(e) {
-        debugger
-      }
-    });
+
+    Cxllab.current_user = new Cxllab.Models.User({id: id});
+    Cxllab.current_user.fetch();
 
     var view = new Cxllab.Views.userView({
-      model: user
+      model: Cxllab.current_user
     });
     this._swapView(view);
 

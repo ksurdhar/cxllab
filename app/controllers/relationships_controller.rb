@@ -1,4 +1,4 @@
-class RelationshipsController < ApplicationController
+class Api::RelationshipsController < ApplicationController
 
   def create
     @relationship = Relationship.new(relationship_params)
