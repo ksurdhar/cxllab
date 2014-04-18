@@ -7,8 +7,22 @@
           <li><%= user.get('email') %>
           <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newRelationBtn">Like</button>
           </li>
+           
         <% }); %>
         </ul>
+        <script>
+            SC.initialize({
+              client_id: '5a1ab580242d18027f496e01bfc31064'
+            });
+            
+            SC.oEmbed(
+            'http://soundcloud.com/mynameisezra' , 
+            { auto_play: true, show_comments: false }, 
+            document.getElementById('player'));
+          </script>
+       
+        <div id="player"></div>
     </div>
   </div>
 </div>
+
