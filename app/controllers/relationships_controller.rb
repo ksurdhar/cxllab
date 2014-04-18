@@ -10,6 +10,11 @@ class Api::RelationshipsController < ApplicationController
     end 
   end
 
+  def index
+    @relationships = Relationship.all
+    render "relationships/index"
+  end
+
   private
   def relationship_params
     params.require(:relationship).permit(:liker_id, :liked_user_id)

@@ -16,9 +16,9 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userIndex: function(){
-    Cxllab.Collections.users.fetch();
+    Cxllab.Collections.my_users.fetch();
     var view = new Cxllab.Views.usersIndex({
-      collection: Cxllab.Collections.users
+      collection: Cxllab.Collections.my_users
     });
     this._swapView(view);
   },
@@ -32,8 +32,6 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       model: Cxllab.current_user
     });
     this._swapView(view);
-
-
   },
 
   _swapView: function (view) {

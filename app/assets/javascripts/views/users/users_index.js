@@ -3,7 +3,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   template: JST['users/index'],
 
   initialize: function (options){
-    this.listenTo(this.collection, "sync change", this.render);
+    this.listenTo(this.collection, "sync change remove", this.render);
   },
 
   events:{
@@ -24,6 +24,9 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       liker_id: current_user_id,
       liked_user_id: liked_id
     });
+
+    var liked_user = Cxllab.Collections.my_users.where({id: liked_id})
+    Cxllab.Collections.my_users.remove(liked_user)
 
     like.save();
   }
