@@ -1,4 +1,3 @@
-
 <% if current_user.nil? %> 
   <%= link_to "Sign Up", sc_connect_api_users_url %>
   <%= link_to "Sign In", new_user_session_url %>
@@ -9,3 +8,9 @@
 <% end %>
 
 <div id="content"></div>
+
+<script>
+  <% if current_user %>
+    global_user_id = "<%= current_user.id %>"
+  <% end %> 
+</script>

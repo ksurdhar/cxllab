@@ -1,7 +1,6 @@
 Algorithm for feed discovery, random, but adding a tally to # of views a profile has
 Create several soundcloud accounts - say 4 per genre. 
 
-get refresh view to work
 add dislike button, accompanying method
 
 add username to soundcloud model
@@ -11,10 +10,8 @@ update jbuilder + controllers
 Show only one view at a time
 get soundcloud player
 
-
-
-
-
+add swiping
+add matches in account page
 
 
 

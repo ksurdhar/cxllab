@@ -19,3 +19,4 @@ Cxllab.Models.User = Backbone.Model.extend({
     return jsonResp;
   },
 });
+
