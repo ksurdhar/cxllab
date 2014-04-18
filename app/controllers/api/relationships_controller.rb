@@ -17,7 +17,7 @@ class Api::RelationshipsController < ApplicationController
 
   private
   def relationship_params
-    params.require(:relationship).permit(:liker_id, :liked_user_id)
+    params.require(:relationship).permit(:liker_id, :liked_user_id, :like)
   end
 
 end

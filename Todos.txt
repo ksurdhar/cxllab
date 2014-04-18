@@ -3,9 +3,6 @@ Create several soundcloud accounts - say 4 per genre.
 
 add dislike button, accompanying method
 
-add username to soundcloud model
-add t.boolean :liked to relationship model
-update jbuilder + controllers
 
 Show only one view at a time
 get soundcloud player

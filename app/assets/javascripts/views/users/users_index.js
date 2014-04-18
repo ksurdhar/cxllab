@@ -22,7 +22,8 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     var current_user_id = Cxllab.current_user.get("id");
     var like = new Cxllab.Models.Relationship({
       liker_id: current_user_id,
-      liked_user_id: liked_id
+      liked_user_id: liked_id,
+      like: true
     });
 
     var liked_user = Cxllab.Collections.my_users.where({id: liked_id})

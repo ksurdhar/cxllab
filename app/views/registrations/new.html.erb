@@ -4,7 +4,11 @@
   <%= devise_error_messages! %>
 
   <%= f.hidden_field :sc_access_token, value: @new_sc_token %>
-  <%= f.hidden_field :sc_id, value: @new_sc_id %>
+  <%= f.hidden_field :sc_id, value: @sc_id %>
+  <%= f.hidden_field :sc_username, value: @sc_username %>
+  <%= f.hidden_field :sc_permalink, value: @sc_permalink %>
+  <%= f.hidden_field :sc_permalink_url, value: @sc_permalink_url %>
+  <%= f.hidden_field :sc_uri, value: @sc_uri %>
 
   <div><%= f.label :email %><br />
   <%= f.email_field :email, autofocus: true %></div>

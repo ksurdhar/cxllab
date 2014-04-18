@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140416223906) do
   create_table "relationships", force: true do |t|
     t.integer  "liker_id"
     t.integer  "liked_user_id"
+    t.boolean  "like"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,8 +42,12 @@ ActiveRecord::Schema.define(version: 20140416223906) do
     t.string   "about"
     t.string   "genre"
     t.boolean  "producer"
-    t.integer  "sc_id"
     t.string   "sc_access_token"
+    t.integer  "sc_id"
+    t.string   "sc_username"
+    t.string   "sc_permalink"
+    t.string   "sc_permalink_url"
+    t.string   "sc_uri"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

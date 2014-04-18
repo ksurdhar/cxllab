@@ -27,6 +27,7 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, :sc_id)
+    params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, 
+                                 :sc_id, :sc_username, :sc_permalink, :sc_permalink_url, :sc_uri)
   end
 end

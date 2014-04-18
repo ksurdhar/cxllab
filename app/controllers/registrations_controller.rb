@@ -2,15 +2,20 @@ class RegistrationsController < Devise::RegistrationsController
   def new
     client = Soundcloud.new(:client_id => '5a1ab580242d18027f496e01bfc31064',
                         :client_secret => '62ab42202db997a3855d6e7d8d5c67db',
-                        :redirect_uri => new_user_registration_url, :scope => "non-expiring")
+                        :redirect_uri => new_user_registration_url, :scope => "non-expiring") #I don't think this needs to be here
 
     code = params[:code]
     access_token = client.exchange_token(:code => code)
     @new_sc_token = access_token.access_token
 
     new_client = Soundcloud.new(:access_token => @new_sc_token)
-    current_user = new_client.get('/me')
-    @new_sc_id = current_user.id
+    sc_account = new_client.get('/me')
+
+    @sc_id = sc_account.id
+    @sc_username = sc_account.username
+    @sc_permalink = sc_account.permalink
+    @sc_permalink_url = sc_account.permalink_url
+    @sc_uri = sc_account.uri
 
     super
   end
@@ -42,6 +47,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   private
   def user_params
-    params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, :sc_id, :encrypted_password)
+    params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, :sc_id, 
+                                 :encrypted_password, :sc_username, :sc_permalink, :sc_permalink_url, :sc_uri)
   end
 end
