@@ -5,7 +5,7 @@
         <ul>
         <% users.each(function(user) { %>
           <li><%= user.get('email') %>
-          <button class="btn btn-sm btn-success" type="button" id="newRelationBtn">Like</button>
+          <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newRelationBtn">Like</button>
           </li>
         <% }); %>
         </ul>

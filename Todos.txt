@@ -1,8 +1,7 @@
 Algorithm for feed discovery, random, but adding a tally to # of views a profile has
 Create several soundcloud accounts - say 4 per genre. 
 
-
-grab id by data.like.id
+refresh view on like of collection
 add dislike button, accompanying method
 
 add username to soundcloud model

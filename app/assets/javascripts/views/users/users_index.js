@@ -16,11 +16,13 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     return this;
   },
 
-  createLike: function(){
+  createLike: function(e){
+    var liked_id = $(e.currentTarget).data("id")
+
     var current_user_id = Cxllab.current_user.get("id");
     var like = new Cxllab.Models.Relationship({
       liker_id: current_user_id,
-      liked_user_id: "6"
+      liked_user_id: liked_id
     });
 
     like.save();
