@@ -17,12 +17,12 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userIndex: function(){
     Cxllab.Collections.my_users.fetch();
-
     Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
 
     var view = new Cxllab.Views.usersIndex({
       collection: Cxllab.Collections.my_users
     });
+    
     this._swapView(view);
   },
 

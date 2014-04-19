@@ -10,11 +10,6 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    # client = Soundcloud.new(:client_id => '5a1ab580242d18027f496e01bfc31064')
-    # track_url = 'http://soundcloud.com/mynameisezra/' 
-    # embed_info = client.get('/oembed', :url => track_url)
-    # @player = embed_info['html']
-
     respond_to do |format|
       format.json { render json: @user }
     end

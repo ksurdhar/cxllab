@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require underscore
+//= require soundcloud
 //= require backbone
 //= require cxllab
 //= require_tree ../templates

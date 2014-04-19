@@ -16,6 +16,10 @@ Cxllab.Collections.Users = Backbone.Collection.extend({
       });
       return model
     }
+  },
+
+  one_user: function(){
+    return this.pop();
   }
 });
 
