@@ -1,8 +1,12 @@
 
 
 
-matches, genre, swiping
 
+matches, genre, swiping, graphs
+
+add a form in account page to set genre
+
+dry out like/dislike code
 
 
 

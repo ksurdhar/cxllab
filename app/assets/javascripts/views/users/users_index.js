@@ -17,7 +17,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     
     var renderedContent = this.template({ user: next_user });
     this.$el.html(renderedContent);
-    setTimeout(this.renderPlayer(next_user), 250);
+    this.renderPlayer(next_user);
     return this;
   },
 
@@ -52,8 +52,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
   renderPlayer: function(user){
     if(user){
-      var username = user.get("sc_username")
-      var track_url = 'http://soundcloud.com/' + username;
+      var track_url = user.get("sc_permalink_url");
 
       SC.oEmbed(track_url, {auto_play: false, show_comments: false, 
       maxheight: 166, sharing: false, buying: false, download: false}, 
