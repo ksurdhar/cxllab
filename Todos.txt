@@ -1,5 +1,9 @@
 
 
+//pass in a collection of users to template that 
+  // list emails 
+  //where my.relationships.liked_user_ids = users with those ids if that_model.relationships.include a liked_user_id == global user
+      
 
 
 matches, genre, swiping, graphs

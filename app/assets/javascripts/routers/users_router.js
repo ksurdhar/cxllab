@@ -2,6 +2,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
    initialize: function(options){
     this.$rootEl = options.$rootEl
+    Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
   },
 
   routes: {
@@ -17,7 +18,6 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userIndex: function(){
     Cxllab.Collections.my_users.fetch();
-    Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
 
     var view = new Cxllab.Views.usersIndex({
       collection: Cxllab.Collections.my_users
@@ -28,7 +28,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userShow: function(id){
     Cxllab.current_user.fetch();
-      
+    
     var view = new Cxllab.Views.userView({
       model: Cxllab.current_user
     });

@@ -34,6 +34,11 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     Cxllab.Collections.my_users.remove(liked_user)
 
     like.save();
+    var relationships = Cxllab.current_user.relationships();
+    relationships.add(like);
+
+
+    //check_for_matches
   },
 
   createHate: function(e){
@@ -48,6 +53,9 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     Cxllab.Collections.my_users.remove(liked_user)
 
     like.save();
+    var relationships = Cxllab.current_user.relationships();
+    relationships.add(like);
+    //check_for_matches
   },
 
   renderPlayer: function(user){
