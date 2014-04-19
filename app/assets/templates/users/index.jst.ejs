@@ -4,12 +4,16 @@
        <h1 class="text-center">User Index</h1><br>
 
         <ul>
-        <% users.each(function(user) { %>
+        <% if(user){ %>
           <li><%= user.get('email') %>
-          <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newRelationBtn">Like</button>
+          <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newLikeBtn">Like</button>
+          <button class="btn btn-sm btn-danger" type="button" data-id="<%=user.id%>" id="newHateBtn">Dislike</button>
           </li>
-        <% }); %>
+        <% } %>
         </ul>
+
+
+        <div id="test"></div>
        
         <div id="player"></div>
     </div>

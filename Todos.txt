@@ -1,14 +1,8 @@
-Algorithm for feed discovery, random, but adding a tally to # of views a profile has
-Create several soundcloud accounts - say 4 per genre. 
-
-add dislike button, accompanying method
 
 
-Show only one view at a time
-get soundcloud player
 
-add swiping
-add matches in account page
+matches, genre, swiping
+
 
 
 
