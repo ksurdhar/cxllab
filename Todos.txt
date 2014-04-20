@@ -4,14 +4,14 @@
   // list emails 
   //where my.relationships.liked_user_ids = users with those ids if that_model.relationships.include a liked_user_id == global user
       
-
+my_users collection problem: lookat next_user
 
 matches, genre, swiping, graphs
 
 add a form in account page to set genre
 
 dry out like/dislike code
-
+making matches persist => global collection of relationships?
 
 
 creating a custom scope (User.all <= all is a scope)

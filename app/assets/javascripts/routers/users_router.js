@@ -16,11 +16,11 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userIndex: function(){
-    if(typeof Cxllab.current_user === "undefined"){
-      Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
-    }
+    this.setCurrentUser();
     
     Cxllab.Collections.my_users.fetch();
+    Cxllab.Collections.users.fetch();
+    
 
     var view = new Cxllab.Views.usersIndex({
       collection: Cxllab.Collections.my_users
@@ -47,6 +47,17 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       $(".notice").empty();
     } else {
       this._noticeSwitch = 1
+    }
+  },
+
+  setCurrentUser: function(){
+    if(typeof Cxllab.current_user === "undefined"){
+      Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
+      Cxllab.Collections.my_users = new Cxllab.Collections.Users();
+    }
+    if(Cxllab.current_user.get('id') !== global_user_id){
+      Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
+      Cxllab.Collections.my_users = new Cxllab.Collections.Users();
     }
   }
 

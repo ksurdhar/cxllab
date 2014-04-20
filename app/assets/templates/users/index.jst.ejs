@@ -13,6 +13,11 @@
         </ul>     
           
         <div id="player"></div>
+        <ul>
+        <% users.each(function(user){ %>
+          <li>id: <%= user.get('id') %> email: <%= user.get('email') %></li>
+        <% }); %>
+        </ul>
     </div>
   </div>
 </div>

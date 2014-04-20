@@ -15,7 +15,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   render: function(){
     var next_user = this.nextUser(this.collection);
     
-    var renderedContent = this.template({ user: next_user });
+    var renderedContent = this.template({ user: next_user, users: this.collection });
     this.$el.html(renderedContent);
     this.renderPlayer(next_user);
     return this;
@@ -37,8 +37,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     var relationships = Cxllab.current_user.relationships();
     relationships.add(like);
 
-
-    //check_for_matches
+    this.checkMatches(liked_id);
   },
 
   createHate: function(e){
@@ -55,7 +54,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     like.save();
     var relationships = Cxllab.current_user.relationships();
     relationships.add(like);
-    //check_for_matches
+
   },
 
   renderPlayer: function(user){
@@ -71,15 +70,38 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   nextUser: function(collection){
     if(this.collection.length > 0){ 
       var id = this.collection.length
-      if(id === global_user_id){
-        id++
+      if(id == global_user_id){
+        ++id
       } 
       var next_user = this.collection.get({id: id})
       return next_user
     }
+  },
+
+  checkMatches: function(liked_id){
+    var liked_user = Cxllab.Collections.users.findWhere({ id: liked_id });
+    var relationships = liked_user.relationships();
+    var match = relationships.where({ liked_user_id: global_user_id, like: true });
+    
+    if(match.length > 0){
+      alert("match!");
+    }
   }
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
