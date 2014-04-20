@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all - current_user.liked_users - [current_user]
+    @users = User.all
     render "users/index"
   end
 

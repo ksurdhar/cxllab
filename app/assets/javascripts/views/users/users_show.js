@@ -3,22 +3,22 @@ window.Cxllab.Views.userView = Backbone.View.extend({
 
   initialize: function (options) {
     this.listenTo(this.model, "sync change", this.render);
+    this.options = options || {};
   },
 
   render: function(){
     var relationships = this.model.relationships();
-    // var matches = this.matchedUsers(this.collection);
-    
+    var matches = this.matchedUsers(this.collection, this.options.all_likes);
     var renderedContent = this.template({ user: this.model, relationships: relationships });
     
     this.$el.html(renderedContent);
     return this;
   },
 
-  matchedUsers: function(collection){
+  matchedUsers: function(collection, relationships){
+    debugger
     if(collection.length > 0){
-      var all_relationships = Cxllab.current_user.relationships();
-      var liked_relationships = all_relationships.where({ liked: true });
+      var liked_relationships = relationships.where({ liked: true });
 
       var possible_ids = [];
       var possible_matches = [];

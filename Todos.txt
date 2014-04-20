@@ -17,15 +17,11 @@ else{
 </ul>
 
 
-
-// list emails 
 //where my.relationships.(where liked: true).liked_user_ids = users with those ids if that_model.relationships.include a liked_user_id == global
       
-consider a subview
 
-look at matches
+TODO
 matches, genre, swiping, graphs
-
 add a form in account page to set genre
 
 dry out like/dislike code
@@ -36,12 +32,38 @@ creating a custom scope (User.all <= all is a scope)
 current_user.potential_matches
 potential_matches = users with ids that are not included in my liked users
 
-
-notifications can appear when a user swipes - listening for changes
-
-
-
 SET UP FIGARO
+
+_______________________________________
+
+create a relationships index route
+make two queries
+
+list where { liker_id: me, like: true }
+get these ids
+for each of these people, look through their relationships
+
+if they have 
+
+where { liked_user_id: me, like:true }
+
+create a match
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

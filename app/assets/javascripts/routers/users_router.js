@@ -2,6 +2,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
    initialize: function(options){
     this.$rootEl = options.$rootEl
+    Cxllab.Collections.relationships.fetch();
   },
 
   routes: {
@@ -32,9 +33,11 @@ Cxllab.Routers.Users = Backbone.Router.extend({
     Cxllab.current_user.fetch();
     Cxllab.Collections.users.fetch();
     
+    // debugger
     var view = new Cxllab.Views.userView({
       model: Cxllab.current_user,
-      collection: Cxllab.Collections.users
+      collection: Cxllab.Collections.users,
+      all_likes: Cxllab.Collections.relationships
     });
     this._swapView(view);
   },
@@ -52,10 +55,18 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   setCurrentUser: function(){
+    var that = this;
     if(typeof Cxllab.current_user === "undefined" || Cxllab.current_user.get('id') !== parseInt(global_user_id) ){
       Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
       Cxllab.Collections.my_users = new Cxllab.Collections.Users();
+      Cxllab.Collections.my_users.fetch({
+        success: function(){
+          var me = Cxllab.Collections.my_users.findWhere({ id: parseInt(global_user_id) });
+          Cxllab.Collections.my_users.remove(me);
+        }
+      });
     }
   }
+
 
 });
