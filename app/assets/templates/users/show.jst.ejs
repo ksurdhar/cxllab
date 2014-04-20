@@ -6,11 +6,14 @@
           <li><%= user.get('email') %></li>
           <li><%= user.get('sc_username') %></li>
       </ul>
+      Your Relationships
      <ul>
         <% relationships.each(function(relationship){ %>
           <li>id: <%= relationship.get('id') %> liked_user_id: <%= relationship.get('liked_user_id') %></li>
         <% }); %>
       </ul>
+      
+
     </div>
   </div>
 </div>

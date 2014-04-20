@@ -20,7 +20,6 @@ Cxllab.Routers.Users = Backbone.Router.extend({
     
     Cxllab.Collections.my_users.fetch();
     Cxllab.Collections.users.fetch();
-    
 
     var view = new Cxllab.Views.usersIndex({
       collection: Cxllab.Collections.my_users
@@ -31,9 +30,11 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userShow: function(id){
     Cxllab.current_user.fetch();
+    Cxllab.Collections.users.fetch();
     
     var view = new Cxllab.Views.userView({
-      model: Cxllab.current_user
+      model: Cxllab.current_user,
+      collection: Cxllab.Collections.users
     });
     this._swapView(view);
   },
@@ -51,11 +52,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   setCurrentUser: function(){
-    if(typeof Cxllab.current_user === "undefined"){
-      Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
-      Cxllab.Collections.my_users = new Cxllab.Collections.Users();
-    }
-    if(Cxllab.current_user.get('id') !== global_user_id){
+    if(typeof Cxllab.current_user === "undefined" || Cxllab.current_user.get('id') !== parseInt(global_user_id) ){
       Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
       Cxllab.Collections.my_users = new Cxllab.Collections.Users();
     }

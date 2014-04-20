@@ -76,6 +76,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
   checkMatches: function(liked_id){
     var liked_user = Cxllab.Collections.users.findWhere({ id: liked_id });
+    // debugger
     var relationships = liked_user.relationships();
     var match = relationships.where({ liked_user_id: global_user_id, like: true });
     
