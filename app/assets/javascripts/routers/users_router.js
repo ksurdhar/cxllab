@@ -18,8 +18,6 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userIndex: function(){
     this.setCurrentUser();
-    
-    Cxllab.Collections.my_users.fetch();
     Cxllab.Collections.users.fetch();
 
     var view = new Cxllab.Views.usersIndex({
@@ -61,6 +59,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       Cxllab.Collections.my_users = new Cxllab.Collections.Users();
       Cxllab.Collections.my_users.fetch({
         success: function(){
+          debugger
           var me = Cxllab.Collections.my_users.findWhere({ id: parseInt(global_user_id) });
           Cxllab.Collections.my_users.remove(me);
         }

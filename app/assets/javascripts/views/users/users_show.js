@@ -16,35 +16,37 @@ window.Cxllab.Views.userView = Backbone.View.extend({
   },
 
   matchedUsers: function(collection, relationships){
+
+    var me = Cxllab.Collections.users.findWhere({ id: parseInt(global_user_id) });
+    var my_relationships = me.relationships();
+    var liked_relationships = my_relationships.where({ liked: true });
     debugger
-    if(collection.length > 0){
-      var liked_relationships = relationships.where({ liked: true });
 
-      var possible_ids = [];
-      var possible_matches = [];
-      var matches = [];
+    var possible_ids = [];
+    var possible_matches = [];
+    var matches = [];
 
-      liked_relationships.forEach(function(relationship){
-        var id = relationship.get('liked_user_id');
-        possible_ids.push(id);
-      });
+    liked_relationships.forEach(function(relationship){
+      var id = relationship.get('liked_user_id');
+      possible_ids.push(id);
+    });
 
-      possible_ids.forEach(function(id){
-        var user = collection.findWhere({ id: id });
-        if(user){
-          possible_matches.push(user);
-        }
-      });
+    possible_ids.forEach(function(id){
+      var user = collection.findWhere({ id: id });
+      if(user){
+        possible_matches.push(user);
+      }
+    });
 
-      possible_matches.forEach(function(pos_match){
-        var match = pos_match.relationships.findWhere({ liked_user_id: global_user_id });
-        if(match){
-          match.push(pos_match);
-        }
-      });
+    possible_matches.forEach(function(pos_match){
+      var match = pos_match.relationships.findWhere({ liked_user_id: global_user_id });
+      if(match){
+        match.push(pos_match);
+      }
+    });
 
-      return matches;
-    }
+    return matches;
+    
   }
 
   

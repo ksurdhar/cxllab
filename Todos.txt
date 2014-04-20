@@ -1,13 +1,4 @@
 
-if(matches.length > 0){
-  debugger
-  var renderedContent = this.template({ user: this.model, relationships: relationships, matches: matches });
-}
-else{
-  debugger
-  var matches = [];
-  var renderedContent = this.template({ user: this.model, relationships: relationships, matches: matches });
-}
 
 
 <ul>
