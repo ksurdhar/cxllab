@@ -69,11 +69,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
   nextUser: function(collection){
     if(this.collection.length > 0){ 
-      var id = this.collection.length
-      if(id == global_user_id){
-        ++id
-      } 
-      var next_user = this.collection.get({id: id})
+      var next_user = this.collection.at(0)
       return next_user
     }
   },
