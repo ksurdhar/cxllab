@@ -57,7 +57,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     if(user){
       var track_url = user.get("sc_permalink_url");
 
-      SC.oEmbed(track_url, {auto_play: true, show_comments: false, 
+      SC.oEmbed(track_url, {auto_play: false, show_comments: false, 
       maxheight: 166, sharing: false, buying: false, download: false}, 
       document.getElementById('player'));
     }
@@ -71,10 +71,12 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   },
 
   checkMatches: function(liked_id){
-    var liked_user = Cxllab.Collections.users.findWhere({ id: liked_id });
-    // debugger
-    var relationships = liked_user.relationships();
-    var match = relationships.where({ liked_user_id: global_user_id, like: true });
+
+    var match = Cxllab.Collections.relationships.where({ 
+      liker_id: liked_id, 
+      liked_user_id: parseInt(global_user_id), 
+      like: true 
+    });
     
     if(match.length > 0){
       alert("match!");

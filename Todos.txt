@@ -1,22 +1,26 @@
-
-LOOK AT ME HERE
-My relationship controller / route is fucked up
-users have all all their relationships.
-      
-
+     
 TODO
-matches, genre, swiping, graphs
-add a form in account page to set genre
 
-dry out like/dislike code
-making matches persist => global collection of relationships?
+chat, genre/preferences, bootstrap
+
+
+SECONDARY TODOS
+
+setting up figaro
+heroku
+
+preventing users from navigating to other users pages
+dry out like/dislike code (it repeats itself)
+get or fetch methods for everything - speed
+graphs
+
 
 
 creating a custom scope (User.all <= all is a scope)
 current_user.potential_matches
 potential_matches = users with ids that are not included in my liked users
 
-SET UP FIGARO
+
 
 
 
