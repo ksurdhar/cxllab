@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+
     <div class="col-md-4 col-md-offset-4">
        <h1 class="text-center">User Index</h1><br>
 
@@ -13,12 +14,21 @@
         </ul>     
           
         <div id="player"></div>
+    </div>
+
+    <div class="col-md-4">
+        <br><br><br><br><br><br><br>
         <ul>
         <% users.each(function(user){ %>
           <li>id: <%= user.get('id') %> email: <%= user.get('email') %></li>
         <% }); %>
         </ul>
     </div>
+
+
   </div>
+
+
+    
 </div>
 
