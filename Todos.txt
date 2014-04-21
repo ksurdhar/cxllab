@@ -1,14 +1,7 @@
 
-
-
-<ul>
-  <% matches.each(function(match){ %>
-    <li>id: <%= match.get('id') %> email: <%= match.get('email') %></li>
-  <% }); %>
-</ul>
-
-
-//where my.relationships.(where liked: true).liked_user_ids = users with those ids if that_model.relationships.include a liked_user_id == global
+LOOK AT ME HERE
+My relationship controller / route is fucked up
+users have all all their relationships.
       
 
 TODO
@@ -24,21 +17,6 @@ current_user.potential_matches
 potential_matches = users with ids that are not included in my liked users
 
 SET UP FIGARO
-
-_______________________________________
-
-create a relationships index route
-make two queries
-
-list where { liker_id: me, like: true }
-get these ids
-for each of these people, look through their relationships
-
-if they have 
-
-where { liked_user_id: me, like:true }
-
-create a match
 
 
 
