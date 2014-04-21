@@ -20,6 +20,16 @@ class Api::UsersController < ApplicationController
     render "users/index"
   end
 
+  def potentials
+    @users = User.all - current_user.liked_users - [current_user]
+    render "users/index"
+  end
+
+  def currentuser
+    @users = [current_user]
+    render "users/index"
+  end
+
   private
   def user_params
     params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, 

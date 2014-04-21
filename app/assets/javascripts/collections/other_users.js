@@ -1,5 +1,5 @@
-Cxllab.Collections.Users = Backbone.Collection.extend({
-  url: "api/users",
+Cxllab.Collections.otherUsers = Backbone.Collection.extend({
+  url: "api/users/potentials",
   model: Cxllab.Models.User,
   
   getOrFetch: function (id){
@@ -20,4 +20,4 @@ Cxllab.Collections.Users = Backbone.Collection.extend({
   
 });
 
-window.Cxllab.Collections.users = new Cxllab.Collections.Users();
+window.Cxllab.Collections.otherUsers = new Cxllab.Collections.otherUsers();

@@ -7,12 +7,17 @@
           <li><%= user.get('sc_username') %></li>
       </ul>
       Your Relationships
-     <ul>
+      <ul>
         <% relationships.each(function(relationship){ %>
           <li>id: <%= relationship.get('id') %> liked_user_id: <%= relationship.get('liked_user_id') %></li>
         <% }); %>
       </ul>
-      
+      Your Matches
+      <ul>
+        <% matches.each(function(match){ %>
+          <li>id: <%= match.get('id') %> email: <%= match.get('email') %></li>
+        <% }); %>
+      </ul>
 
     </div>
   </div>

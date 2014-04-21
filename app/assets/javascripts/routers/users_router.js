@@ -17,27 +17,31 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userIndex: function(){
-    this.setCurrentUser();
     Cxllab.Collections.users.fetch();
+    Cxllab.Collections.otherUsers.fetch();
+    Cxllab.currentUser.fetch();
 
     var view = new Cxllab.Views.usersIndex({
-      collection: Cxllab.Collections.my_users
+      collection: Cxllab.Collections.otherUsers
     });
     
     this._swapView(view);
   },
 
   userShow: function(id){
-    Cxllab.current_user.fetch();
+    var that = this;
     Cxllab.Collections.users.fetch();
-    
-    // debugger
-    var view = new Cxllab.Views.userView({
-      model: Cxllab.current_user,
-      collection: Cxllab.Collections.users,
-      all_likes: Cxllab.Collections.relationships
+    var me = Cxllab.Collections.users.get(id);
+    Cxllab.Collections.relationships.fetch({
+      success: function(){
+        var view = new Cxllab.Views.userView({
+          model: me,
+          collection: Cxllab.Collections.users,
+          all_likes: Cxllab.Collections.relationships
+        });
+        that._swapView(view);
+      }
     });
-    this._swapView(view);
   },
 
   _swapView: function (view) {
@@ -49,21 +53,6 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       $(".notice").empty();
     } else {
       this._noticeSwitch = 1
-    }
-  },
-
-  setCurrentUser: function(){
-    var that = this;
-    if(typeof Cxllab.current_user === "undefined" || Cxllab.current_user.get('id') !== parseInt(global_user_id) ){
-      Cxllab.current_user = new Cxllab.Models.User({id: global_user_id});
-      Cxllab.Collections.my_users = new Cxllab.Collections.Users();
-      Cxllab.Collections.my_users.fetch({
-        success: function(){
-          debugger
-          var me = Cxllab.Collections.my_users.findWhere({ id: parseInt(global_user_id) });
-          Cxllab.Collections.my_users.remove(me);
-        }
-      });
     }
   }
 

@@ -11,7 +11,12 @@ Cxllab::Application.routes.draw do
   end
   
   namespace :api, :defaults => { :format => :json } do
-    resources :users, only: [:index, :show]
+    resources :users, only: [:index, :show] do
+      collection do
+        get 'potentials'
+        get 'currentuser'
+      end
+    end
     resources :relationships, only: [:create, :index]
   end
 
