@@ -1,8 +1,7 @@
      
 TODO
 
-chat, genre/preferences, bootstrap
-
+contact, genre/preferences, bootstrap
 
 SECONDARY TODOS
 
@@ -22,17 +21,10 @@ potential_matches = users with ids that are not included in my liked users
 
 
 
+everything on your account; your email address, your username, your genre, whether or not you're a producer
 
-
-
-
-
-
-
-
-
-
-
+matches
+could use a modal, could use a subview
 
 
 

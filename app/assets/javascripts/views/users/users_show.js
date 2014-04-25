@@ -6,23 +6,32 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     this.options = options || {};
   },
 
-  render: function(){
-    var relation_arr = Cxllab.Collections.relationships.where({ liker_id: parseInt(global_user_id) });
-    var myRelations = new Cxllab.Collections.Relationships();
+   events:{
+    'click #testing': 'renderSub'
+  },
 
-    relation_arr.forEach(function(rel){
-      myRelations.add(rel);
+  render: function(){
+    var relationArr = Cxllab.Collections.relationships.where({ liker_id: parseInt(global_user_id) });
+    var relations = new Cxllab.Collections.Relationships();
+
+    relationArr.forEach(function(rel){
+      relations.add(rel);
     });
     
     var matches = this.matchedUsers(this.collection, this.options.all_likes);
 
     var renderedContent = this.template({ 
       user: this.model, 
-      relationships: myRelations, 
+      relationships: relations, 
       matches: matches
     });
     
     this.$el.html(renderedContent);
+    return this;
+  },
+
+  renderSub: function(){
+    this.$el.html("I am a banana");
     return this;
   },
 

@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require modal
  */
 
 
 @import "bootstrap";
+@import "modal";

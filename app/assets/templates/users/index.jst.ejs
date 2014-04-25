@@ -4,14 +4,19 @@
     <div class="col-md-4 col-md-offset-4">
        <h1 class="text-center">User Index</h1><br>
 
-        <ul>
+        
         <% if(user){ %>
-          <li><%= user.get('email') %>
-          <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newLikeBtn">Like</button>
-          <button class="btn btn-sm btn-danger" type="button" data-id="<%=user.id%>" id="newHateBtn">Dislike</button>
-          </li>
+          <ul>
+            <li><%= user.get('email') %>
+            <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newLikeBtn">Like</button>
+            <button class="btn btn-sm btn-danger" type="button" data-id="<%=user.id%>" id="newHateBtn">Dislike</button>
+            </li>
+          </ul>    
+        <% } else{ %>
+            Your feed is empty!
+
         <% } %>
-        </ul>     
+         
           
         <div id="player"></div>
     </div>
