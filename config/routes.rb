@@ -4,6 +4,7 @@ Cxllab::Application.routes.draw do
 
   namespace :api do
     resources :users, only: [] do
+      get 'email', to: 'users#show'
       collection do
         get 'sc_connect'
       end

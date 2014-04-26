@@ -1,5 +1,6 @@
 window.Cxllab.Views.userView = Backbone.View.extend({
   template: JST["users/show"],
+  subtemplate: JST["users/contact"],
 
   initialize: function (options) {
     this.listenTo(this.model, "sync change", this.render);
@@ -7,7 +8,8 @@ window.Cxllab.Views.userView = Backbone.View.extend({
   },
 
    events:{
-    'click #testing': 'renderSub'
+    'click #contactUser': 'renderSub',
+    'click #return': 'render'
   },
 
   render: function(){
@@ -30,8 +32,12 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     return this;
   },
 
-  renderSub: function(){
-    this.$el.html("I am a banana");
+  renderSub: function(e){
+    var matchedId = $(e.currentTarget).data("id")
+    var user = this.collection.findWhere({ id: matchedId })
+
+    var renderedContent = this.subtemplate({user: user});
+    $("#contact").html(renderedContent);
     return this;
   },
 

@@ -16,4 +16,17 @@ class User < ActiveRecord::Base
   has_many :likers, 
   through: :liker_relationships, 
   source: :liker
+
+  has_many :sent_emails, :foreign_key => :reciever_id, :class_name => 'Email'
+  has_many :recieved_emails, :foreign_key => :sender_id, :class_name => 'Email'
+
+  has_many :senders, 
+  through: :sent_emails, 
+  source: :sender
+
+  has_many :recievers, 
+  through: :recieved_emails, 
+  source: :reciever 
+
+  
 end

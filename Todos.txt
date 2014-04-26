@@ -1,11 +1,18 @@
      
 TODO
 
-contact, genre/preferences, bootstrap
+contact => change the appearance of user name once you've contacted them
+possibly add a contacted boolean to relationships
+
+genre/preferences, 
+bootstrap
 
 SECONDARY TODOS
 
 setting up figaro
+home page which explains project and technologies
+take out two pass confirmation
+making sure that if user is routed to edit new user page they'll have access to the token
 heroku
 
 preventing users from navigating to other users pages
@@ -13,20 +20,10 @@ dry out like/dislike code (it repeats itself)
 get or fetch methods for everything - speed
 graphs
 
+create an email model w/ user_id, recipient_id, body
+create an email controller w/ create and show actions
 
-
-creating a custom scope (User.all <= all is a scope)
-current_user.potential_matches
-potential_matches = users with ids that are not included in my liked users
-
-
-
-everything on your account; your email address, your username, your genre, whether or not you're a producer
-
-matches
-could use a modal, could use a subview
-
-
+generate actionmailer
 
 
 

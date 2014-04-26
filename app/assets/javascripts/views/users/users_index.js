@@ -57,7 +57,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     if(user){
       var track_url = user.get("sc_permalink_url");
 
-      SC.oEmbed(track_url, {auto_play: false, show_comments: false, 
+      SC.oEmbed(track_url, {auto_play: true, show_comments: false, 
       maxheight: 166, sharing: false, buying: false, download: false}, 
       document.getElementById('player'));
     }

@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4">
+
       <h1 class="text-center">Your Account</h1><br>
+      
       <ul>
           <li><%= user.get('email') %></li>
           <li><%= user.get('sc_username') %></li>
@@ -13,13 +15,13 @@
         <% }); %>
       </ul>
       Your Matches
-      <ul>
-        <% matches.each(function(match){ %>
-          <li>id: <%= match.get('id') %> email: <%= match.get('email') %></li>
-        <% }); %>
-      </ul>
-      <button class="btn btn-sm btn-danger" type="button" id="testing">New Content</button>
-
+      <div id="contact">
+        <ul>
+          <% matches.each(function(match){ %>
+            <div id="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+          <% }); %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
