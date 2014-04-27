@@ -43,14 +43,14 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
     var like = new Cxllab.Models.Relationship({
       liker_id: global_user_id,
-      liked_user_id: liked_id
+      liked_user_id: liked_id,
+      like: false
     });
 
     var liked_user = Cxllab.otherUsers.where({id: liked_id})
     Cxllab.otherUsers.remove(liked_user)
     like.save();
     Cxllab.relationships.add(like);
-
   },
 
   renderPlayer: function(user){
