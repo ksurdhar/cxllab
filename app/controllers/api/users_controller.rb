@@ -30,9 +30,6 @@ class Api::UsersController < ApplicationController
     render "users/index"
   end
 
-  def email
-  end
-
   private
   def user_params
     params.require(:user).permit(:email, :about, :genre, :producer, :sc_access_token, 

@@ -3,7 +3,7 @@ Cxllab.Models.User = Backbone.Model.extend({
 
   relationships: function(){
     if(!this._relationships){
-      this._relationships = new Cxllab.Collections.Relationships([], {
+      this._relationships = new Cxllab.Collections.relationships([], {
         user: this
       });
     }

@@ -4,10 +4,12 @@ Cxllab::Application.routes.draw do
 
   namespace :api do
     resources :users, only: [] do
-      get 'email', to: 'users#show'
       collection do
         get 'sc_connect'
       end
+    end
+    resources :emails, only: [] do
+      get 'send', to: 'emails#show'
     end
   end
   
@@ -19,6 +21,7 @@ Cxllab::Application.routes.draw do
       end
     end
     resources :relationships, only: [:create, :index]
+    resources :emails, :only => [:create, :index] 
   end
 
   

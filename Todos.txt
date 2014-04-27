@@ -9,18 +9,21 @@ bootstrap
 
 SECONDARY TODOS
 
+add the ability to navigate to users soundcloud page once matched
+change ids to classes where appropriate
 setting up figaro
 home page which explains project and technologies
 take out two pass confirmation
 making sure that if user is routed to edit new user page they'll have access to the token
 heroku
 
+*** user jbuilder explains why only certain relationships are added?
+
 preventing users from navigating to other users pages
 dry out like/dislike code (it repeats itself)
 get or fetch methods for everything - speed
 graphs
 
-create an email model w/ user_id, recipient_id, body
 create an email controller w/ create and show actions
 
 generate actionmailer
@@ -30,3 +33,7 @@ generate actionmailer
 
 
 
+if an email exists that I sent to user
+
+backbone collection
+fetching it

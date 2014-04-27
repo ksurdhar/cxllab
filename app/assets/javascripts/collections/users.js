@@ -20,4 +20,4 @@ Cxllab.Collections.Users = Backbone.Collection.extend({
   
 });
 
-window.Cxllab.Collections.users = new Cxllab.Collections.Users();
+window.Cxllab.users = new Cxllab.Collections.Users();

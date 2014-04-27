@@ -2,7 +2,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
    initialize: function(options){
     this.$rootEl = options.$rootEl
-    Cxllab.Collections.relationships.fetch();
+    Cxllab.relationships.fetch();
   },
 
   routes: {
@@ -17,27 +17,44 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userIndex: function(){
-    Cxllab.Collections.users.fetch();
-    Cxllab.Collections.otherUsers.fetch();
-    Cxllab.currentUser.fetch();
+    Cxllab.users.fetch();
+    Cxllab.otherUsers.fetch();
 
     var view = new Cxllab.Views.usersIndex({
-      collection: Cxllab.Collections.otherUsers
+      collection: Cxllab.otherUsers
     });
     
     this._swapView(view);
   },
 
+  // userShow: function(id){
+  //   var that = this;
+  //   Cxllab.users.fetch();
+  //   var me = Cxllab.users.get(id);
+
+  //   Cxllab.relationships.fetch({
+  //     success: function(){
+  //       var view = new Cxllab.Views.userView({
+  //         model: me,
+  //         collection: Cxllab.users,
+  //         all_likes: Cxllab.relationships
+  //       });
+  //       that._swapView(view);
+  //     }
+  //   });
+  // },
+
   userShow: function(id){
     var that = this;
-    Cxllab.Collections.users.fetch();
-    var me = Cxllab.Collections.users.get(id);
-    Cxllab.Collections.relationships.fetch({
+    Cxllab.users.fetch();
+    var me = Cxllab.users.get(id);
+
+    Cxllab.relationships.fetch({
       success: function(){
         var view = new Cxllab.Views.userView({
           model: me,
-          collection: Cxllab.Collections.users,
-          all_likes: Cxllab.Collections.relationships
+          collection: Cxllab.users,
+          all_likes: Cxllab.relationships
         });
         that._swapView(view);
       }

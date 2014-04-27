@@ -20,4 +20,4 @@ Cxllab.Collections.otherUsers = Backbone.Collection.extend({
   
 });
 
-window.Cxllab.Collections.otherUsers = new Cxllab.Collections.otherUsers();
+window.Cxllab.otherUsers = new Cxllab.Collections.otherUsers();

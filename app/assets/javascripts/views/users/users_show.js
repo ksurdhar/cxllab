@@ -9,12 +9,13 @@ window.Cxllab.Views.userView = Backbone.View.extend({
 
    events:{
     'click #contactUser': 'renderSub',
-    'click #return': 'render'
+    'click #return': 'render',
+    'submit form': 'sendEmail'
   },
 
   render: function(){
-    var relationArr = Cxllab.Collections.relationships.where({ liker_id: parseInt(global_user_id) });
-    var relations = new Cxllab.Collections.Relationships();
+    var relationArr = Cxllab.relationships.where({ liker_id: parseInt(global_user_id) });
+    var relations = new Cxllab.Collections.relationships();
 
     relationArr.forEach(function(rel){
       relations.add(rel);
@@ -76,6 +77,18 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     });
 
     return myMatches; 
+  },
+
+  sendEmail: function(e){
+    event.preventDefault();
+
+    var params = $(e.currentTarget).serializeJSON()["email"];
+    var email = new Cxllab.Models.Email(params);
+    email.save();
+    //could make it so that email boolean is added to relationship model
+    this.render();
+    $('div[data-id=' + params.reciever_id + ']').removeAttr('id');
+    //add a class here to for styling
   }
 
   

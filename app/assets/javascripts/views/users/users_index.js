@@ -30,10 +30,10 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       like: true
     });
 
-    var liked_user = Cxllab.Collections.otherUsers.where({id: liked_id})
-    Cxllab.Collections.otherUsers.remove(liked_user)
+    var liked_user = Cxllab.otherUsers.where({id: liked_id})
+    Cxllab.otherUsers.remove(liked_user)
     like.save();
-    Cxllab.Collections.relationships.add(like);
+    Cxllab.relationships.add(like);
 
     this.checkMatches(liked_id);
   },
@@ -46,10 +46,10 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       liked_user_id: liked_id
     });
 
-    var liked_user = Cxllab.Collections.otherUsers.where({id: liked_id})
-    Cxllab.Collections.otherUsers.remove(liked_user)
+    var liked_user = Cxllab.otherUsers.where({id: liked_id})
+    Cxllab.otherUsers.remove(liked_user)
     like.save();
-    Cxllab.Collections.relationships.add(like);
+    Cxllab.relationships.add(like);
 
   },
 
@@ -72,7 +72,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
   checkMatches: function(liked_id){
 
-    var match = Cxllab.Collections.relationships.where({ 
+    var match = Cxllab.relationships.where({ 
       liker_id: liked_id, 
       liked_user_id: parseInt(global_user_id), 
       like: true 
