@@ -1,4 +1,4 @@
-window.Cxllab.Models.Relationship = Backbone.Model.extend({
+Cxllab.Models.Relationship = Backbone.Model.extend({
   urlRoot: "/api/relationships",
 
   toJSON: function () {

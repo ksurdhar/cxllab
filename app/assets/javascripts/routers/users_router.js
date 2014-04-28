@@ -16,13 +16,16 @@ Cxllab.Routers.Users = Backbone.Router.extend({
   },
 
   userIndex: function(){
-    Cxllab.otherUsers.fetch();
+    var that = this;
+    var complete = _.invoke([Cxllab.otherUsers, Cxllab.relationships], 'fetch');
+    $.when.apply($, complete).done(function(){
 
-    var view = new Cxllab.Views.usersIndex({
-      collection: Cxllab.otherUsers
+      var view = new Cxllab.Views.usersIndex({
+        collection: Cxllab.otherUsers
+      });
+
+      that._swapView(view);
     });
-    
-    this._swapView(view);
   },
 
   userShow: function(id){
@@ -35,11 +38,11 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       var view = new Cxllab.Views.userView({
         model: me,
         collection: Cxllab.users,
-        all_likes: Cxllab.relationships
+        relationships: Cxllab.relationships
       });
+
       that._swapView(view);
     });
-    
   },
 
   _swapView: function (view) {

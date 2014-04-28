@@ -1,4 +1,4 @@
-window.Cxllab.Collections.relationships = Backbone.Collection.extend({
+Cxllab.Collections.relationships = Backbone.Collection.extend({
   url: "api/relationships",
   model: Cxllab.Models.Relationship
 

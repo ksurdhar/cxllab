@@ -14,14 +14,14 @@ window.Cxllab.Views.userView = Backbone.View.extend({
   },
 
   render: function(){
-    var relationArr = Cxllab.relationships.where({ liker_id: parseInt(global_user_id) });
+    var myRelationsArr = Cxllab.relationships.where({ liker_id: parseInt(global_user_id) });
     var relations = new Cxllab.Collections.relationships();
 
-    relationArr.forEach(function(rel){
+    myRelationsArr.forEach(function(rel){
       relations.add(rel);
     });
     
-    var matches = this.matchedUsers(this.collection, this.options.all_likes);
+    var matches = this.matchedUsers(this.collection, this.options.relationships);
 
     var renderedContent = this.template({ 
       user: this.model, 
@@ -44,7 +44,7 @@ window.Cxllab.Views.userView = Backbone.View.extend({
 
   matchedUsers: function(collection, relationships){
 
-    var my_relationships = relationships.where({
+    var myLikes = relationships.where({
       liker_id: parseInt(global_user_id), 
       like: true 
     });
@@ -53,7 +53,7 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     var matchedIds = [];
     var myMatches = new Cxllab.Collections.Users();
 
-    my_relationships.forEach(function(relationship){
+    myLikes.forEach(function(relationship){
       var id = relationship.get('liked_user_id');
       myLikedIds.push(id);
     });

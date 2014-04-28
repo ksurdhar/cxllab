@@ -30,8 +30,8 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       like: true
     });
 
-    var liked_user = Cxllab.otherUsers.where({id: liked_id})
-    Cxllab.otherUsers.remove(liked_user)
+    var liked_user = this.collection.where({id: liked_id})
+    this.collection.remove(liked_user)
     like.save();
     Cxllab.relationships.add(like);
 
@@ -47,8 +47,8 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       like: false
     });
 
-    var liked_user = Cxllab.otherUsers.where({id: liked_id})
-    Cxllab.otherUsers.remove(liked_user)
+    var liked_user = this.collection.where({id: liked_id})
+    this.collection.remove(liked_user)
     like.save();
     Cxllab.relationships.add(like);
   },
@@ -77,7 +77,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       liked_user_id: parseInt(global_user_id), 
       like: true 
     });
-    
+
     if(match.length > 0){
       alert("match!");
     }
