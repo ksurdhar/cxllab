@@ -15,9 +15,15 @@ class Api::RelationshipsController < ApplicationController
     render "relationships/index"
   end
 
+  def update
+    @relationship = Relationship.find(params[:id])
+    @relationship.update_attributes(relationship_params)
+    render "relationships/show"
+  end
+
   private
   def relationship_params
-    params.require(:relationship).permit(:liker_id, :liked_user_id, :like)
+    params.require(:relationship).permit(:liker_id, :liked_user_id, :like, :emailed)
   end
 
 end

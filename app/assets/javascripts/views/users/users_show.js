@@ -85,12 +85,31 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     var params = $(e.currentTarget).serializeJSON()["email"];
     var email = new Cxllab.Models.Email(params);
     email.save();
-    //could make it so that email boolean is added to relationship model
+
+    var relation = this.options.relationships.findWhere({
+      liker_id: parseInt(global_user_id), 
+      liked_user_id: parseInt(params.reciever_id)
+    });
+
+    relation.set({ emailed: true });
+
+    relation.save();
+
     this.render();
-    $('div[data-id=' + params.reciever_id + ']').removeAttr('id');
-    //add a class here to for styling
+    // $('div[data-id=' + params.reciever_id + ']').removeAttr('id');
   }
 
   
 
 });
+
+
+
+
+
+
+
+
+
+
+

@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140426230930) do
     t.integer  "liker_id"
     t.integer  "liked_user_id"
     t.boolean  "like"
+    t.boolean  "emailed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

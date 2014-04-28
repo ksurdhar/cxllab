@@ -18,7 +18,11 @@
       <div id="contact">
         <ul>
           <% matches.each(function(match){ %>
-            <div id="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+            <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true })) { %>
+              <div data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+            <% } else { %>
+              <div id="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+            <% } %>
           <% }); %>
         </ul>
       </div>
