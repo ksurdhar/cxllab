@@ -15,10 +15,13 @@ class Api::EmailsController < ApplicationController
   end
 
   def show
+    @email = Email.find(params[:email_id])
+    UserMailer.cxllab_email(@email).deliver
+    render :json => @email
   end
 
   private
   def email_params
-    params.require(:email).permit(:body, :sender_id, :reciever_id)
+    params.require(:email).permit(:body, :sender_id, :reciever_id, :id, :email_id)
   end
 end

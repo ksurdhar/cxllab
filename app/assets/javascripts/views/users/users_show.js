@@ -8,7 +8,7 @@ window.Cxllab.Views.userView = Backbone.View.extend({
   },
 
    events:{
-    'click #contactUser': 'renderSub',
+    'click .contactUser': 'renderSub',
     'click #return': 'render',
     'submit form': 'sendEmail'
   },
@@ -84,7 +84,13 @@ window.Cxllab.Views.userView = Backbone.View.extend({
 
     var params = $(e.currentTarget).serializeJSON()["email"];
     var email = new Cxllab.Models.Email(params);
-    email.save();
+
+    email.save({}, {
+      success: function(){ 
+        Cxllab.emails.add(email);
+        $.ajax({ url: "/api/emails/" + email.id + "/send" }); 
+      }
+    });
 
     var relation = this.options.relationships.findWhere({
       liker_id: parseInt(global_user_id), 
@@ -92,11 +98,9 @@ window.Cxllab.Views.userView = Backbone.View.extend({
     });
 
     relation.set({ emailed: true });
-
     relation.save();
 
     this.render();
-    // $('div[data-id=' + params.reciever_id + ']').removeAttr('id');
   }
 
   

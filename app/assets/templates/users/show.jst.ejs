@@ -19,9 +19,9 @@
         <ul>
           <% matches.each(function(match){ %>
             <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true })) { %>
-              <div data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+              <div class="emailed" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
             <% } else { %>
-              <div id="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+              <div class="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
             <% } %>
           <% }); %>
         </ul>

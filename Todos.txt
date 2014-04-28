@@ -1,10 +1,10 @@
      
 TODO
 
-contact => change the appearance of user name once you've contacted them
-possibly add a contacted boolean to relationships
+email Id messed up
+ActiveRecord::RecordNotFound - Couldn't find Email without an ID:
 
-genre/preferences, 
+genre/preferences
 bootstrap
 
 SECONDARY TODOS
@@ -13,7 +13,6 @@ add the ability to navigate to users soundcloud page once matched
 change ids to classes where appropriate
 setting up figaro
 home page which explains project and technologies
-take out two pass confirmation
 making sure that if user is routed to edit new user page they'll have access to the token
 heroku
 
@@ -26,6 +25,12 @@ graphs
 
 generate actionmailer
 
-give either one div or another
+For test account:
+on sign in, check for test_user's id
+if test_user
+delete all user's liked relationships and emails
 
-check if an email exists from me to them.
+
+using soundcloud api
+tinder-inspired ui and matching system
+actionmailer

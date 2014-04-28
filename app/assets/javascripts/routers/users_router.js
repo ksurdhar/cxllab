@@ -30,7 +30,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userShow: function(id){
     var that = this;
-    var complete = _.invoke([Cxllab.users, Cxllab.relationships], 'fetch');
+    var complete = _.invoke([Cxllab.users, Cxllab.relationships, Cxllab.emails], 'fetch');
     $.when.apply($, complete).done(function(){
 
       var me = Cxllab.users.get(id);

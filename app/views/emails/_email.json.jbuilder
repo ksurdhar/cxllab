@@ -1,1 +1,1 @@
-json.(email, :id, :sender_id, :reciever_id)
+json.(email, :id, :sender_id, :reciever_id, :body)
