@@ -2,6 +2,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
    initialize: function(options){
     this.$rootEl = options.$rootEl
+    SC.initialize({ client_id: '5a1ab580242d18027f496e01bfc31064' });
   },
 
   routes: {

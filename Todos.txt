@@ -1,9 +1,6 @@
      
 TODO
 
-email Id messed up
-ActiveRecord::RecordNotFound - Couldn't find Email without an ID:
-
 genre/preferences
 bootstrap
 
@@ -22,8 +19,8 @@ dry out like/dislike code (it repeats itself)
 get or fetch methods for everything - speed
 graphs
 
+either use callbacks or use a setinterval to keep checking whether or not a the player has
 
-generate actionmailer
 
 For test account:
 on sign in, check for test_user's id

@@ -13,12 +13,23 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   },
 
   render: function(){
+    var that = this;
     var next_user = this.nextUser(this.collection);
-    
     var renderedContent = this.template({ user: next_user, users: this.collection });
     this.$el.html(renderedContent);
-    this.renderPlayer(next_user);
+
+    setTimeout(function(){that.renderPlayer(next_user);}, 1);
+    
     return this;
+  },
+
+  renderPlayer: function(user){
+    if(user){
+      var track_url = user.get("sc_permalink_url");
+      SC.oEmbed(track_url, {auto_play: true, show_comments: false, 
+      maxheight: 166, sharing: false, buying: false, download: false}, 
+      document.getElementById('player'));
+    }
   },
 
   createLike: function(e){
@@ -51,16 +62,6 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     this.collection.remove(liked_user)
     like.save();
     Cxllab.relationships.add(like);
-  },
-
-  renderPlayer: function(user){
-    if(user){
-      var track_url = user.get("sc_permalink_url");
-
-      SC.oEmbed(track_url, {auto_play: true, show_comments: false, 
-      maxheight: 166, sharing: false, buying: false, download: false}, 
-      document.getElementById('player'));
-    }
   },
 
   nextUser: function(collection){
