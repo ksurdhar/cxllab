@@ -13,9 +13,18 @@
  *= require modal
  */
 
- .emailed{
+$body-bg: #e74c3c;
+/*$text-color: #fff;*/
+
+.box{
+  background-color: #fff;
+  border-radius:10px;
+}
+
+
+.emailed{
   color: #bdc3c7;
- }
+}
 
 
 @import "bootstrap";
