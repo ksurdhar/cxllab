@@ -14,18 +14,44 @@
  */
 
 $body-bg: #e74c3c;
-/*$text-color: #fff;*/
+$link-color: #fff;
+$text-color: #e74c3c;
+
+button {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  /* put the height and width of your image here */
+  height: 100px;
+  width: 100px;
+  border: none;
+}
+
+button span {
+  display: none;
+}
+
 
 .box{
   background-color: #fff;
-  border-radius:10px;
+  border-radius:7px;
+  padding: 40px;
 }
 
+#logo{
+  color:#fff;
+}
+
+.constrained{
+  height: 400px;
+}
+
+.center{
+  text-align: center;
+}
 
 .emailed{
   color: #bdc3c7;
 }
-
 
 @import "bootstrap";
 @import "modal";

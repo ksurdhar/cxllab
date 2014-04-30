@@ -5,23 +5,23 @@
       <h1 class="text-center">Your Account</h1><br>
       
       <ul>
-          <li><%= user.get('email') %></li>
-          <li><%= user.get('sc_username') %></li>
+          <li>Email: <%= user.get('email') %></li>
+          <li>Artist Name: <%= user.get('sc_username') %></li>
       </ul>
-      Your Relationships
+      <!-- Your Relationships
       <ul>
         <% relationships.each(function(relationship){ %>
           <li>id: <%= relationship.get('id') %> liked_user_id: <%= relationship.get('liked_user_id') %></li>
         <% }); %>
-      </ul>
+      </ul> -->
       Your Matches
       <div id="contact">
         <ul>
           <% matches.each(function(match){ %>
             <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true })) { %>
-              <div class="emailed" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+              <div class="emailed" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> username: <%= match.get('sc_username') %></li></div>
             <% } else { %>
-              <div class="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> email: <%= match.get('email') %></li></div>
+              <div class="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> username: <%= match.get('sc_username') %></li></div>
             <% } %>
           <% }); %>
         </ul>

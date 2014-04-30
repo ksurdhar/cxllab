@@ -2,21 +2,20 @@
 TODO
 
 genre/preferences
-bootstrap
+
 
 SECONDARY TODOS
 
+preventing users from navigating to other users pages
 add the ability to navigate to users soundcloud page once matched
-change ids to classes where appropriate
+
 setting up figaro
 home page which explains project and technologies
 making sure that if user is routed to edit new user page they'll have access to the token
-heroku
 
 
-preventing users from navigating to other users pages
+
 dry out like/dislike code (it repeats itself)
-get or fetch methods for everything - speed
 graphs
 
 

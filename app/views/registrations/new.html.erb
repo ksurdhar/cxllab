@@ -1,24 +1,31 @@
-<h2>Sign ahp</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 box center">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+      <h2>Sign Up</h2>
 
-  <%= f.hidden_field :sc_access_token, value: @new_sc_token %>
-  <%= f.hidden_field :sc_id, value: @sc_id %>
-  <%= f.hidden_field :sc_username, value: @sc_username %>
-  <%= f.hidden_field :sc_permalink, value: @sc_permalink %>
-  <%= f.hidden_field :sc_permalink_url, value: @sc_permalink_url %>
-  <%= f.hidden_field :sc_uri, value: @sc_uri %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+        <%= f.hidden_field :sc_access_token, value: @new_sc_token %>
+        <%= f.hidden_field :sc_id, value: @sc_id %>
+        <%= f.hidden_field :sc_username, value: @sc_username %>
+        <%= f.hidden_field :sc_permalink, value: @sc_permalink %>
+        <%= f.hidden_field :sc_permalink_url, value: @sc_permalink_url %>
+        <%= f.hidden_field :sc_uri, value: @sc_uri %>
 
-  <div><%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+        <div><%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %></div>
+
+        <div><%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "off" %></div>
 
 
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+        <div><%= f.submit "Sign up" %></div>
+      <% end %>
 
-<%= render "devise/shared/links" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
