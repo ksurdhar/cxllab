@@ -1,6 +1,12 @@
      
 TODO
 
+
+css-todos: 
+-mouseover of thumbs
+-logo / splash page explains project and technologies
+
+
 genre/preferences
 
 
@@ -10,13 +16,8 @@ preventing users from navigating to other users pages
 add the ability to navigate to users soundcloud page once matched
 
 setting up figaro
-home page which explains project and technologies
 making sure that if user is routed to edit new user page they'll have access to the token
 
-
-
-dry out like/dislike code (it repeats itself)
-graphs
 
 
 

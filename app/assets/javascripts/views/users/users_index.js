@@ -80,7 +80,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     });
 
     if(match.length > 0){
-      alert("match!");
+      toastr.success('New Match!')
     }
   }
 

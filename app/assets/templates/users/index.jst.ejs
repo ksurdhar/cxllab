@@ -7,8 +7,8 @@
           <h1 class="text-center"><%= user.get('sc_username') %></h1>
           <div id="player"></div>
           <div class="center">
-            <img alt="Twitch logo" height="100" src="/assets/up.png" width="100" data-id="<%=user.id%>" id="newLikeBtn">
-            <img alt="Twitch logo" height="100" src="/assets/down.png" width="100" data-id="<%=user.id%>" id="newHateBtn">
+            <img alt="Like" height="100" src="/assets/up.png" width="100" data-id="<%=user.id%>" id="newLikeBtn">
+            <img alt="Dislike" height="100" src="/assets/down.png" width="100" data-id="<%=user.id%>" id="newHateBtn">
             <!-- <button class="btn btn-sm btn-success" type="button" data-id="<%=user.id%>" id="newLikeBtn">Like</button>
             <button class="btn btn-sm btn-danger" type="button" data-id="<%=user.id%>" id="newHateBtn">Dislike</button> -->
           </div>
@@ -16,7 +16,6 @@
           <h1 class="text-center">Your feed is empty!</h1><br><br><br>
           <h1 class="text-center"> :) </h1>
       <% } %>  
-        
     </div>
 
     <div class="col-md-4"> 

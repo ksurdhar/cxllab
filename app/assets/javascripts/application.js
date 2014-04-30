@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require underscore
+//= require toastr
 //= require soundcloud
 //= require backbone
 //= require cxllab

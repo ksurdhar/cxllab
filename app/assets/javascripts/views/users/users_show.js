@@ -99,6 +99,7 @@ window.Cxllab.Views.userView = Backbone.View.extend({
 
     relation.set({ emailed: true });
     relation.save();
+    toastr.success('Email Sent!')
 
     this.render();
   }
