@@ -1,11 +1,19 @@
      
 TODO
 
+<div class="smallerbox centered">
+  <p class="centered">Powered By:</p>
+  <img alt="headphones" height="100" src="/assets/rails.png" width="100">
+  <img alt="headphones" height="90" src="/assets/backbone.png" width="90">
+  <img alt="headphones" height="100" src="/assets/cloud.png" width="100">
+</div>
 
-css-todos: 
--mouseover of thumbs
--logo / splash page explains project and technologies
 
+css-todos: w
+-notifications tell / link to account
+-about view
+-trial account
+-seed data
 
 genre/preferences
 
@@ -20,7 +28,6 @@ making sure that if user is routed to edit new user page they'll have access to 
 
 
 
-
 For test account:
 on sign in, check for test_user's id
 if test_user
@@ -28,5 +35,13 @@ delete all user's liked relationships and emails
 
 
 using soundcloud api
-tinder-inspired ui and matching system
 actionmailer
+
+
+Artist List:
+Sam Smith
+Ellie Goulding
+Ta-ku
+Flume
+Tycho
+Chet Faker

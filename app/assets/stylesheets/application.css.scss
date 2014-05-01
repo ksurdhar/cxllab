@@ -17,6 +17,9 @@
 $body-bg: #e74c3c;
 $link-color: #fff;
 $text-color: #e74c3c;
+$btn-primary-color: #e74c3c;
+$btn-primary-bg: #fff;
+
 
 /*button {
   background-repeat: no-repeat;
@@ -41,8 +44,26 @@ button span {
   padding: 40px;
 }
 
+.smallerbox{
+  color: #e74c3c;
+  background-color: #fff;
+  border-radius:7px;
+  padding: 10px;
+}
+
 .logo{
   color:#fff;
+}
+
+.lighten{
+  opacity: 0.3;
+}
+
+.github{
+  a:link {color:#FFFE6B;}    
+  a:visited {color:#FFFE6B;} 
+  a:hover {color:#7DEBFF;}  
+  a:active {color:#E2FF5C;}
 }
 
 #newLikeBtn{

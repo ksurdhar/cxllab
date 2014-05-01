@@ -9,7 +9,11 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
 
   events:{
     'click #newLikeBtn': 'createLike',
-    'click #newHateBtn': 'createHate'
+    'click #newHateBtn': 'createHate',
+    'mouseover #newLikeBtn': 'lighten',
+    'mouseover #newHateBtn': 'lighten',
+    'mouseleave #newLikeBtn': 'lighten',
+    'mouseleave #newHateBtn': 'lighten'
   },
 
   render: function(){
@@ -82,6 +86,10 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     if(match.length > 0){
       toastr.success('New Match!')
     }
+  },
+
+  lighten: function(e){
+    $(e.currentTarget).toggleClass('lighten');
   }
 
 });
