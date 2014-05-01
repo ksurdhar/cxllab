@@ -11,7 +11,7 @@ gem 'binding_of_caller'
 gem 'pg'
 gem 'bulk_data_methods'
 gem 'pace-rails'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'thin'
 gem 'json'
 gem 'newrelic_rpm'
