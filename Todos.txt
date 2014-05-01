@@ -2,33 +2,18 @@
 TODO
 
 css-todos:
--seed data
 
 -notifications tell / link to account
 -unlike button -> destroys your relationship with them
 
 
-genre/preferences
-
-
 SECONDARY TODOS
 
-preventing users from navigating to other users pages
+prevent users from navigating to other users pages
 add the ability to navigate to users soundcloud page once matched
 
 setting up figaro
 making sure that if user is routed to edit new user page they'll have access to the token
-
-
-
-For test account:
-on sign in, check for test_user's id
-if test_user
-delete all user's liked relationships and emails
-
-
-using soundcloud api
-actionmailer
 
 
 Artist List:

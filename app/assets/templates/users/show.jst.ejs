@@ -12,10 +12,10 @@
       <div id="contact">
         <ul>
           <% matches.each(function(match){ %>
-            <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true })) { %>
-              <div class="emailed" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> username: <%= match.get('sc_username') %></li></div>
+            <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true }) ){ %>
+              <div class="emailed"><li>username: <%= match.get('sc_username') %> (emailed)</li></div>
             <% } else { %>
-              <div class="contactUser" data-id="<%= match.id %>"><li>id: <%= match.get('id') %> username: <%= match.get('sc_username') %></li></div>
+              <div class="contactUser" data-id="<%= match.id %>"><li>username: <%= match.get('sc_username') %></li></div>
             <% } %>
           <% }); %>
         </ul>

@@ -24,7 +24,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     this.$el.html(renderedContent);
 
     setTimeout(function(){that.renderPlayer(next_user);}, 1);
-    
+
     return this;
   },
 
@@ -47,6 +47,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       rel.destroy();
     });
     Cxllab.otherUsers.fetch();
+    toastr.success('Discovery Feed has been successfully reset!');
   },
 
   createLike: function(e){
@@ -105,25 +106,3 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   }
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

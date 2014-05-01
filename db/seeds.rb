@@ -11,3 +11,6 @@ User.create!(email: "flume@gmail.com", password: "password", sc_username: "flume
 User.create!(email: "chetf@gmail.com", password: "password", sc_username: "chet faker", sc_permalink_url: "http://soundcloud.com/chet-faker")
 User.create!(email: "sammysmith@gmail.com", password: "password", sc_username: "sam smith", sc_permalink_url: "http://soundcloud.com/samsmithworld")
 User.create!(email: "ellieg@gmail.com", password: "password", sc_username: "ellie goulding", sc_permalink_url: "http://soundcloud.com/elliegoulding")
+
+Relationship.create!(liked_user_id: 1, liker_id: 2, like: true)
+Relationship.create!(liked_user_id: 1, liker_id: 4, like: true)
