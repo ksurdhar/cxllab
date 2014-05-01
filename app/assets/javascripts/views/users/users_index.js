@@ -84,7 +84,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
     });
 
     if(match.length > 0){
-      toastr.success('New Match!')
+      toastr.success('New match! Check your account.')
     }
   },
 

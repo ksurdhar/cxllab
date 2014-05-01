@@ -4,17 +4,18 @@
   </div>
   <div class="col-md-4 logo">
     <br><br><br><br><br><br>
-    <h1>A matching app for musicians seeking to collaborate.</h1>
-    <br>
-    <div class="home-button">
-      <a href="users/sign_in" class="btn btn-lg btn-primary">Launch The App</a>
-      <br><br>
-      </div>
-      <p>
-        <!-- <a href="api/users/sc_connect">Sign Up</a> /
-        <a href="users/sign_in">Sign In</a> -->
-        <h3 class="github">built by <a href="https://github.com/ksurdhar" target="_blank">Kiran Surdhar</h3></a>
-      </p>
-      
+    <h1>A matching app for musicians seeking to collaborate.</h1><br>
+    <form action="/users/sign_in" method="post">
+      <input type="hidden" name="authenticity_token" value="<%=auth_token%>">
+      <input type="hidden" name="user[email]" value="user1@gmail.com">
+      <input type="hidden" name="user[password]" value="password">
+      <input class="btn btn-lg btn-primary" type="submit" value="Launch The App">
+    </form>
+      <p><h3 class="github">built by <a href="https://github.com/ksurdhar" target="_blank">Kiran Surdhar</a></h3></p>
   </div>
 </div>
+
+
+<!-- <a href="api/users/sc_connect">Sign Up</a> /
+<a href="users/sign_in">Sign In</a> -->
+

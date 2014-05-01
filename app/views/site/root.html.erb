@@ -3,5 +3,6 @@
 <script>
   <% if current_user %>
     global_user_id = "<%= current_user.id %>"
-  <% end %> 
+  <% end %>
+  auth_token = "<%= "#{form_authenticity_token}".html_safe %>"
 </script>

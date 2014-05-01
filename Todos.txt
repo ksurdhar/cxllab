@@ -1,19 +1,16 @@
      
 TODO
 
-<div class="smallerbox centered">
-  <p class="centered">Powered By:</p>
-  <img alt="headphones" height="100" src="/assets/rails.png" width="100">
-  <img alt="headphones" height="90" src="/assets/backbone.png" width="90">
-  <img alt="headphones" height="100" src="/assets/cloud.png" width="100">
-</div>
-
-
-css-todos: w
--notifications tell / link to account
+css-todos:
 -about view
--trial account
 -seed data
+
+-trial account
+
+-reset feed button
+-notifications tell / link to account
+-unlike button -> destroys your relationship with them
+
 
 genre/preferences
 

@@ -1,6 +1,5 @@
 Contact <%= user.get('email') %>
 <br>
-
 <form>
   <input type="hidden" name="email[sender_id]" value="<%= global_user_id %>">
   <input type="hidden" name="email[reciever_id]" value="<%=user.id%>">

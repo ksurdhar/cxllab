@@ -1,19 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-md-offset-4 box">
-
       <h1 class="text-center">Your Account</h1><br>
-      
-      <ul>
-          <li>Email: <%= user.get('email') %></li>
-          <li>Artist Name: <%= user.get('sc_username') %></li>
+
+      <ul class="black-text">
+        <li>Email: <%= user.get('email') %></li>
+        <li>Artist Name: <%= user.get('sc_username') %></li>
       </ul>
-      <!-- Your Relationships
-      <ul>
-        <% relationships.each(function(relationship){ %>
-          <li>id: <%= relationship.get('id') %> liked_user_id: <%= relationship.get('liked_user_id') %></li>
-        <% }); %>
-      </ul> -->
+
       Your Matches
       <div id="contact">
         <ul>
@@ -26,6 +20,7 @@
           <% }); %>
         </ul>
       </div>
+      
     </div>
   </div>
 </div>
