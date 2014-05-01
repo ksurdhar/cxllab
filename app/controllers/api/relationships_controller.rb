@@ -10,6 +10,12 @@ class Api::RelationshipsController < ApplicationController
     end 
   end
 
+  def destroy
+    @relationship = Relationship.find(params[:id])
+    @relationship.destroy
+    render "relationships/destroy"
+  end
+
   def index
     @relationships = Relationship.all
     render "relationships/index"

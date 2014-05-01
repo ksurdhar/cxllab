@@ -20,7 +20,7 @@ Cxllab::Application.routes.draw do
         get 'currentuser'
       end
     end
-    resources :relationships, only: [:create, :index, :update]
+    resources :relationships, only: [:create, :index, :update, :destroy]
     resources :emails, :only => [:create, :index] 
   end
 

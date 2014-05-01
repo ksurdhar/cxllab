@@ -2,12 +2,8 @@
 TODO
 
 css-todos:
--about view
 -seed data
 
--trial account
-
--reset feed button
 -notifications tell / link to account
 -unlike button -> destroys your relationship with them
 

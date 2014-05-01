@@ -8,6 +8,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   },
 
   events:{
+    'click #reset': 'reset',
     'click #newLikeBtn': 'createLike',
     'click #newHateBtn': 'createHate',
     'mouseover #newLikeBtn': 'lighten',
@@ -30,10 +31,22 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   renderPlayer: function(user){
     if(user){
       var track_url = user.get("sc_permalink_url");
-      SC.oEmbed(track_url, {auto_play: false, show_comments: false, 
+      SC.oEmbed(track_url, {auto_play: true, show_comments: false, 
       maxheight: 166, sharing: false, buying: false, download: false}, 
       document.getElementById('player'));
     }
+  },
+
+  reset: function(e){
+    e.preventDefault();
+    var relationsArr = Cxllab.relationships.where({ 
+      liker_id: parseInt(global_user_id)
+    });
+
+    relationsArr.forEach(function(rel){
+      rel.destroy();
+    });
+    Cxllab.otherUsers.fetch();
   },
 
   createLike: function(e){
@@ -76,7 +89,6 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   },
 
   checkMatches: function(liked_id){
-
     var match = Cxllab.relationships.where({ 
       liker_id: liked_id, 
       liked_user_id: parseInt(global_user_id), 

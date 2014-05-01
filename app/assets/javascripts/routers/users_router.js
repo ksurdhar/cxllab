@@ -24,7 +24,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
 
   userIndex: function(){
     var that = this;
-    var complete = _.invoke([Cxllab.otherUsers, Cxllab.relationships], 'fetch');
+    var complete = _.invoke([Cxllab.otherUsers, Cxllab.users, Cxllab.relationships], 'fetch');
     $.when.apply($, complete).done(function(){
 
       var view = new Cxllab.Views.usersIndex({
