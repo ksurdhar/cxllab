@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :timeoutable
   has_one :sc_token
+
+  def timeout_in
+    15.minutes
+  end
 
 
   has_many :liker_relationships, :foreign_key => :liked_user_id, :class_name => 'Relationship'

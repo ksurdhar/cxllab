@@ -3,8 +3,12 @@ TODO
 
 css-todos:
 
+-find a solution so that if people don’t sign out it signs them out anyway
 -notifications tell / link to account
 -unlike button -> destroys your relationship with them
+-reroute soundcloud path
+-add popup that explains what's occurring
+
 
 
 SECONDARY TODOS
@@ -23,3 +27,4 @@ Ta-ku
 Flume
 Tycho
 Chet Faker
+
