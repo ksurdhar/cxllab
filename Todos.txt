@@ -3,17 +3,24 @@ TODO
 
 css-todos:
 
--find a solution so that if people don’t sign out it signs them out anyway
+-add a readme file 
+-prevent users from navigating to other users pages
+
 -notifications tell / link to account
 -unlike button -> destroys your relationship with them
 -reroute soundcloud path
 -add popup that explains what's occurring
+-coffeescript
 
+if current_user.signed_in?
+user_signed_in?
 
+Sign In as Guest
+
+Conenct w/ Soundcloud
 
 SECONDARY TODOS
 
-prevent users from navigating to other users pages
 add the ability to navigate to users soundcloud page once matched
 
 setting up figaro
