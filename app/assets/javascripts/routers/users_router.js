@@ -22,7 +22,7 @@ Cxllab.Routers.Users = Backbone.Router.extend({
       $.ajax({ url: "/users/sign_out", type: 'DELETE' });
       delete global_user_id;
       $(".logo").empty();
-      // location.reload();
+      location.reload();
     } 
     // debugger
     var view = new Cxllab.Views.greetView();
