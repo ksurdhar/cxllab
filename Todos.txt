@@ -1,34 +1,19 @@
      
 TODO
 
-css-todos:
-
--listen to click of success toast, navigate to users show page
--add a readme file 
 -prevent users from navigating to other users pages
-
-
 -unlike button -> destroys your relationship with them
 -reroute soundcloud path
--add popup that explains what's occurring
 -coffeescript
 
 
 SECONDARY TODOS
 
 add the ability to navigate to users soundcloud page once matched
-
 setting up figaro
 making sure that if user is routed to edit new user page they'll have access to the token
 
 
-Artist List:
-Sam Smith
-Ellie Goulding
-Ta-ku
-Flume
-Tycho
-Chet Faker
 
 Features
 Self designed matching system for users who liked each other
