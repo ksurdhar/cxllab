@@ -14,7 +14,6 @@ setting up figaro
 making sure that if user is routed to edit new user page they'll have access to the token
 
 
-
 Features
 Self designed matching system for users who liked each other
 Soundcloud API + SDK to connect accounts and render players
