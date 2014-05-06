@@ -3,21 +3,16 @@ TODO
 
 css-todos:
 
+-listen to click of success toast, navigate to users show page
 -add a readme file 
 -prevent users from navigating to other users pages
 
--notifications tell / link to account
+
 -unlike button -> destroys your relationship with them
 -reroute soundcloud path
 -add popup that explains what's occurring
 -coffeescript
 
-if current_user.signed_in?
-user_signed_in?
-
-Sign In as Guest
-
-Conenct w/ Soundcloud
 
 SECONDARY TODOS
 
@@ -35,3 +30,9 @@ Flume
 Tycho
 Chet Faker
 
+Features
+Self designed matching system for users who liked each other
+Soundcloud API + SDK to connect accounts and render players
+Allows matched users to email one one another with ActionMailer
+Custom CSS
+Toastr notifications

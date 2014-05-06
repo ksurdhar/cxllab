@@ -15,7 +15,7 @@
             <% if( relationships.findWhere({ liked_user_id: match.id, emailed: true }) ){ %>
               <div class="emailed"><li>username: <%= match.get('sc_username') %> (emailed)</li></div>
             <% } else { %>
-              <div class="contactUser" data-id="<%= match.id %>"><li>username: <%= match.get('sc_username') %></li></div>
+              <div class="contactUser" data-id="<%= match.id %>"><li><a>username: <%= match.get('sc_username') %></a></li></div>
             <% } %>
           <% }); %>
         </ul>

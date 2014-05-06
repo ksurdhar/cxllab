@@ -8,6 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
+ *= require vex
+ *= require vex-theme-flat-attack
  *= require toastr
  *= require_self
  *= require_tree .
@@ -15,7 +17,7 @@
  */
 
 $body-bg: #e74c3c;
-$link-color: #fff;
+$link-color: #e74c3c;
 $text-color: #e74c3c;
 $btn-primary-color: #e74c3c;
 $btn-primary-bg: #fff;

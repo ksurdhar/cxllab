@@ -5,6 +5,10 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
   initialize: function (options){
     this.listenTo(this.collection, "sync change remove", this.render);
     SC.initialize({ client_id: '5a1ab580242d18027f496e01bfc31064' });
+    if (first_greet === true && global_user_id === 1){
+      vex.dialog.alert("Because this is a demo, we've seeded the database with fake users who already like your music. Go find out which musicians want to collaborate with you!");
+      first_greet = false;
+    }
   },
 
   events:{
@@ -47,7 +51,7 @@ Cxllab.Views.usersIndex = Backbone.View.extend({
       rel.destroy();
     });
     Cxllab.otherUsers.fetch();
-    toastr.success('Discovery Feed has been successfully reset!');
+    toastr.info('Discovery Feed has been successfully reset!');
   },
 
   createLike: function(e){

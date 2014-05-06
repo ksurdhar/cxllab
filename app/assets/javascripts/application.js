@@ -16,6 +16,7 @@
 //= require bootstrap
 //= require underscore
 //= require toastr
+//= require vex.combined.min
 //= require soundcloud
 //= require backbone
 //= require cxllab
@@ -25,3 +26,5 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+vex.defaultOptions.className = 'vex-theme-flat-attack';
