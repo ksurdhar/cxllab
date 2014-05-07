@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   def new
     client = Soundcloud.new(:client_id => '5a1ab580242d18027f496e01bfc31064',
                         :client_secret => '62ab42202db997a3855d6e7d8d5c67db',
-                        :redirect_uri => new_user_registration_url, :scope => "non-expiring") #I don't think this needs to be here
+                        :redirect_uri => 'https://cxllab.herokuapp.com/users/sign_up', :scope => "non-expiring") #I don't think this needs to be here
 
     code = params[:code]
     access_token = client.exchange_token(:code => code)
