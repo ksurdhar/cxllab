@@ -5,7 +5,7 @@ gem 'rails', '4.0.2'
 ruby "1.9.3"
 
 gem 'backbone-on-rails'
-gem 'debugger'
+gem 'debugger', group: [:development, :test]
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pg'
